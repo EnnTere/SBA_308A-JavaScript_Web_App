@@ -8,18 +8,37 @@
 </head>
 <body>
 
-  <section class="anime-container">
-    <h1>Page Title</h1>
-    <!-- Anime Card Template -->
-    <template id="anime-template">
-      <article class="anime-card">
-        <h2 class="anime-title">Title</h2>
-        <img class="anime-img" src="" alt="">
-        <p class="anime-synopsis">About</p>
-        <p class="anime-synopsis">About</p>
-      </article>
-    </template>
-  </section>
+  <main>
+    <h1>Anime</h1>
+    <section class="anime-container">
+      <!-- Anime Card Template -->
+      <template id="anime-template">
+        <article class="anime-card">
+          <div class="anime-title-wrap">
+            <h2 class="anime-title">Title</h2>
+          </div>
+          
+          <img class="anime-img" src="" alt="">
+          <details class="expansion">
+            <summary>Synopsis</summary>
+            <p class="anime-synopsis">About</p>
+          </details>
+        </article>
+      </template>
+      <!-- INCOMPLETE:
+      <div class="pages-nav">
+        <button id="first-btn">1</button>
+        <button id="second-btn">2</button>
+        <button id="third-btn">3</button>
+        ...
+        <button id="last-btn"></button>
+      </div> -->
+
+    </section>
+
+  </main>
+
+
 
   <script type="module" src="/main.js"></script>
 </body>

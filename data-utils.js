@@ -1,18 +1,14 @@
-// Exports
-
+///////// Module Import & Exports /////////
 export { fetchData };
+// import { pagination } from "./page-util.js";
+import { populatePage } from "./render-utils.js";
 
 
-///////// DOM Elements /////////
+// INCOMPLETE: Had not 100% worked out the best directions for the imports & exports, & what would avoid any sort of unnecessary recursion
 
-
-  // const img = document.querySelector('img');
-  // const title = document.querySelector('h2');
-  // const about = document.querySelector('p');
 
 
 ///////// API data /////////
-
 const url = 'https://biggest-anime-collection.p.rapidapi.com/rapidapi/anime/anime_pagination.php?page_no=1';
 
 const options = {
@@ -25,13 +21,14 @@ const options = {
 };
 
 
-//////////////////////////////////////////////
+///////// Nesting for Reference ///////////////
 //obj > records [] > obj containing all k:var
 //animeDataObj.records[0].img_url
 //////////////////////////////////////////////
 
-
-// Retrieves data from API & checks for errors
+///////// Fetches data from API /////////
+// Checks for errors with response
+// INCOMPLETE: Checks for missing values not implemented
 async function fetchData() {
   try {  
     const response = await fetch(url, options);
@@ -39,37 +36,11 @@ async function fetchData() {
     const animeDataObj = await response.json();
 
     populatePage(animeDataObj);
+    // INCOMPLETE: pagination(animeDataObj);
 
     } catch (error) {
       console.warn(error.message);
     }
-};
-
-
-// Render Anime API data on page
-//// Create DocumentFragment & loop over API data
-//// Clone HTMLTemplate & populate w/ data for each entry
-//// Append HTMLTemplate entries to DocumentFragment
-//// Clear container's data & append DocumentFragment to container
-function populatePage(animeData) {
-  const container = document.querySelector('.anime-container');
-  const template = document.querySelector('#anime-template');
-  const fragment = document.createDocumentFragment();
-
-  animeData.records.forEach(anime => {
-    const clone = template.content.cloneNode(true);
-
-    clone.querySelector('.anime-title').textContent = anime.title;
-    clone.querySelector('.anime-synopsis').textContent = anime.synopsis;
-
-    const img = clone.querySelector('.anime-img')
-    img.src = anime.img_url;
-    img.alt = `Art for ${anime.title}`;
-
-    fragment.appendChild(clone)
-  });
-  container.innerHTML = "";
-  container.appendChild(fragment);
 };
 
 
