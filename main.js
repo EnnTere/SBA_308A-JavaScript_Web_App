@@ -1,10 +1,12 @@
+// Module Imports
+
+import { fetchData } from "./data-utils.js";
 
 
 
-import { getData } from "./data-utils.js";
 
-getData();
-
+fetchData();
+//populatePageTest();
 
 
 
