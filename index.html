@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel ="stylesheet" href="styles.css"></link>
+  <link rel="stylesheet" href="styles.css">
+  </link>
 </head>
+
 <body>
 
   <main>
     <h1>Anime</h1>
     <section class="anime-container">
+
       <!-- Anime Card Template -->
       <template id="anime-template">
         <article class="anime-card">
           <div class="anime-title-wrap">
             <h2 class="anime-title">Title</h2>
           </div>
-          
+
           <img class="anime-img" src="" alt="">
           <details class="expansion">
             <summary>Synopsis</summary>
@@ -25,14 +29,37 @@
           </details>
         </article>
       </template>
-      <!-- INCOMPLETE:
+
+      <!-- Navigation Template 2 -->
+
       <div class="pages-nav">
-        <button id="first-btn">1</button>
-        <button id="second-btn">2</button>
-        <button id="third-btn">3</button>
-        ...
-        <button id="last-btn"></button>
-      </div> -->
+          <span>Showing  1 - 20 of 19311</span>      
+          <template id="page-buttons">
+            <button id="first-btn">1</button>
+             <button id="second-btn">2</button>
+            <button id="third-btn">3</button>
+            ...
+
+          </template>
+          <!-- <button id="last-btn"></button> -->
+        </div>
+
+      <!-- Navigation Template -->
+      <!-- <template id="page-buttons"></template>
+        <div class="pages-nav">
+          <span>Showing 1 - 20 of 19311</span>
+
+          <button id="first-btn">1</button>
+          <!-- <button id="second-btn">2</button>
+              <button id="third-btn">3</button> -->
+          ...
+
+
+          <button id="last-btn"></button>
+        </div>
+      </template> -->
+      <!-- <button id="load-more">Load More</button> -->
+
 
     </section>
 
@@ -42,4 +69,5 @@
 
   <script type="module" src="/main.js"></script>
 </body>
+
 </html>

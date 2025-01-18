@@ -1,6 +1,6 @@
 ///////// Module Import & Exports /////////
 export { fetchData };
-// import { pagination } from "./page-util.js";
+//import { pagination } from "./page-util.js";
 import { populatePage } from "./render-utils.js";
 
 
@@ -36,7 +36,8 @@ async function fetchData() {
     const animeDataObj = await response.json();
 
     populatePage(animeDataObj);
-    // INCOMPLETE: pagination(animeDataObj);
+    pagination(animeDataObj);
+    displayButtons(animeDataObj);
 
     } catch (error) {
       console.warn(error.message);

@@ -1,19 +1,71 @@
 ///////// Module Exports /////////
-//export { pagination };
+export { pagination };
 
 
 
-///////Data Format for Reference
-// total_records: '19311',
-// records_on_page: 10,
-// next_records_available: 'yes',
-// page_no: 1, (Query Param)
+// ///////Data Format for Reference
+// // total_records: '19311',
+// // records_on_page: 10,
+// // next_records_available: 'yes',
+// // page_no: 1, (Query Param)
+
+
+
+// const pagination = async (animeData) => {
+//   const pages = animeData.page_no;
+//   const itemsPerPage = animeData.records_on_page;
+//   const loadBtn = document.getElementById('load-more')
+
+//   const skip = pages - 1 * itemsPerPage;
+//   const paginatedURL = 'https://biggest-anime-collection.p.rapidapi.com/rapidapi/anime/anime_pagination.php?page_no=${pages}&skip${skip}';
+
+//   const {} = await fetch();
+
+
+
+
+
+
+// }
+
+// // Load more interaction
+// loadBtn.addEventListener('click', () => {
+//   page++
+//   pagination();
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 ///////// Pagination /////////
 // INCOMPLETE: Original plan was see if I could use a similar approach as the populatePage function. But some unforeseen circumstances ended up significantly impacting the amount of time I had for this project. Obviously not everything below is necessary or even working towards the same thing. It's leftover code from thinking through things while rushing, not something I was expecting to work as written.
-// 
+//  
 // Plan:  buttons 1 - 5 & a button that's = totalPages
 // Ex. [1] [2] [3] ... [1931]
 
